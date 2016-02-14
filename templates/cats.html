@@ -1,0 +1,13 @@
+<div ng-controller="catsController">
+    <form ng-submit="searchFlikr(keyword)">
+        <input type="text" name="keyword" ng-model="keyword" required />
+        <input type="submit" value="Submit" id="submit" />
+    </form>{{searchterm}}
+    <div class="results" ng-if="results">
+        <h2>We found {{ results.length }} results for {{ keyword }}</h2>
+        <div ng-repeat="result in results">
+            <img ng-src="http://farm{{result.farm}}.staticflickr.com/{{result.server}}/{{result.id}}_{{result.secret}}.jpg" alt="" width="30%"  />
+
+        </div>
+    </div>
+</div>
