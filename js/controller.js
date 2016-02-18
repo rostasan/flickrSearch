@@ -14,7 +14,7 @@
             $scope.searchFlikr = function(keyword) {
 
                 $scope.keyword = keyword;
-// need promise function
+// need promise function    per_page: "20"
                 var url = "https://api.flickr.com/services/rest";
                 var request = {
                     method: 'flickr.photos.search',
@@ -22,7 +22,7 @@
                     text: $scope.keyword,
                     format: "json",
                     nojsoncallback: 1,
-                    per_page: "20"
+
 
                 };
 
