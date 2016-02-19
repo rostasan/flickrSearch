@@ -4,12 +4,23 @@
 (function() {
     angular
         .module('flickrApp')
-        .controller('catsController', function($scope, $http) {
+        .controller('catsController', function($scope,$q, $timeout, $http) {
 
             $scope.embedUrl = "https://api.flickr.com/services/rest";
 
-
-
+            function wait() {
+                return $q(function(resolve, reject){
+                    $timeout(function() {
+                        resolve();
+                    }, 2000);
+                });
+            }
+            function notify() {
+                $scope.notifySaved = true;
+                return wait().then(function() {
+                    $scope.notifySaved = false;
+                });
+            }
 
             $scope.searchFlikr = function(keyword) {
 

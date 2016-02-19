@@ -2,8 +2,14 @@
     <form ng-submit="searchFlikr(keyword)">
         <input type="text" name="keyword" ng-model="keyword" required />
         <input type="submit" value="Submit" id="submit" />
-    </form>{{searchterm}}
-    <div class="results" ng-if="results">
+    </form>
+    <div ng-if="submit" class="notification-success">
+       Searching Flickr.
+    </div>
+    <div ng-if="results.length == 0" class="notification-failed">
+        Error! Your search did not return any results.
+    </div>
+    <div class="results" ng-if="results.length > 0">
         <h2>We found {{ results.length }} results for {{ keyword }}</h2>
         <div class="row">
             <div ng-repeat="result in results" class="col-sm-4">
