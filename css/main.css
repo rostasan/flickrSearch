@@ -1,3 +1,17 @@
 body {
     padding: 1em;
 }
+.notification-failed {
+    color:white;
+    padding:10px;
+    border:2px solid black;
+    background:maroon;
+}
+
+.notification-success {
+    color:white;
+    padding:10px;
+    border:2px solid black;
+    background:green;
+    width: 10em;
+}
